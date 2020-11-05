@@ -1,0 +1,4 @@
+<button class='favorite-button' mat-icon-button aria-label="Favorite" [ngClass]="{'active': active, inactive: !active}"
+  (click)='onChangeFavoriteStatus($event)'>
+  <mat-icon>favorite</mat-icon>
+</button>

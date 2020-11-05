@@ -1,0 +1,20 @@
+.favorite-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  position:absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.favorite-button:focus {
+  outline: none;
+}
+
+.active {
+  color:var(--redish);
+}
+
+.inactive {
+  color: var(--gray);
+}

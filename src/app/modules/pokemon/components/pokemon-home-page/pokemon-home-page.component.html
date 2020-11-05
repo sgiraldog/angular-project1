@@ -1,0 +1,6 @@
+<div class='home-page-container'>
+  <input class='search-input' placeholder="Search" (input)='updateSearchContent($event.target.value)'>
+  <app-pokemon-list [pokemonsList]='pokemonsList$ | async' [favoritesList]='favoritePokemonsList$ | async'
+    [isComparing]='isComparing$ | async' [searchContent]='searchContent$ | async'>
+  </app-pokemon-list>
+</div>
