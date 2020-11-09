@@ -1,5 +1,4 @@
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
 import { MatIconModule } from '@angular/material/icon';
 import { PokemonListDataService } from './services/pokemon-list-data.service';
 import { PokemonResolver } from './services/pokemon-resolver';
@@ -17,6 +16,9 @@ import { ComparisonModalComponent } from './components/comparison-modal/comparis
 import { MatDialogModule } from '@angular/material/dialog';
 import { PokemonChartComponent } from './components/pokemon-chart/pokemon-chart.component';
 import { ChartsModule } from 'ng2-charts';
+import { PokemonInformationComponent } from './components/shared/pokemon-information/pokemon-information.component';
+import { ContainerTitleComponent } from './components/shared/container-title/container-title.component';
+import { PokemonAbilitiesComponent } from './components/shared/pokemon-abilities/pokemon-abilities.component';
 
 export const pokemonRoutes: Routes = [
   {
@@ -39,7 +41,10 @@ const entityMetaData: EntityMetadataMap = {
     PokemonListComponent,
     FavoriteButtonComponent,
     ComparisonModalComponent,
-    PokemonChartComponent 
+    PokemonChartComponent,
+    PokemonInformationComponent,
+    ContainerTitleComponent,
+    PokemonAbilitiesComponent
   ],
   imports: [
     CommonModule,

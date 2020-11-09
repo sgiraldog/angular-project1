@@ -18,9 +18,8 @@ export class PokemonModalComponent {
 
   firstPokemon$: Observable<PokemonItem>;
   favoritePokemonList: PokemonItem[];
-  informationUnits = PokemonUtils.informationUnits;
-  informationClasses = PokemonUtils.informationClasses;
-
+  containerTitles = PokemonUtils.containerTitles;
+  
   constructor(public dialog: MatDialogRef<PokemonModalComponent>, @Inject(MAT_DIALOG_DATA) data: DialogData, private store: Store<PokemonState>) {
     this.firstPokemon$ = this.store.select(selectPokemonById, { id: data.firstPokemon})
     this.favoritePokemonList = data.favoritePokemonsList;

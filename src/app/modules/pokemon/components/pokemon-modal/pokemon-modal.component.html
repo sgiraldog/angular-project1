@@ -23,30 +23,14 @@
         {{ item.type.name.charAt(0).toUpperCase() + item.type.name.slice(1) }}
       </li>
     </ul>
-    <div class="information-container">
-      <div *ngFor="let item of pokemon.information | keyvalue; let i = index" [class]="informationClasses[i]">
-        <h3 class="information-container__item-value">{{ item.value + informationUnits[i] }}</h3>
-        <h3 class="information-container__item-name">{{ item.key.charAt(0).toUpperCase() + item.key.slice(1) }}</h3>
-      </div>
-    </div>
+    <app-pokemon-information [pokemon]="pokemon"></app-pokemon-information>
   </div>
   <div class="pokemon-container">
-    <div class="pokemon-container__title">
-      <img class="pokemon-container__title-img" src="assets/images/gray-pokeball.png" alt="Pokeball" />
-      <h3 class="pokemon-container__title-text">Abilities</h3>
-    </div>
-    <ul class="abilities-list">
-      <li *ngFor="let item of pokemon.abilities" class="abilities-item">
-        {{ item.ability.name.charAt(0).toUpperCase() + item.ability.name.slice(1) }}
-      </li>
-    </ul>
+    <app-container-title [title]="containerTitles[0]"></app-container-title>
+    <app-pokemon-abilities [pokemon]="pokemon"></app-pokemon-abilities>
   </div>
   <div class="pokemon-container">
-    <div class="pokemon-container__title">
-      <img class="pokemon-container__title-img" src="assets/images/gray-pokeball.png" alt="Pokeball" />
-      <h3 class="pokemon-container__title-text">Stats</h3>
-    </div>
+    <app-container-title [title]="containerTitles[1]"></app-container-title>
     <app-pokemon-chart [firstPokemon]="firstPokemon$ | async"></app-pokemon-chart>
   </div>
-  <h2 class="pokemon-text">{{ pokemon.name.toUpperCase() }}</h2>
 </div>

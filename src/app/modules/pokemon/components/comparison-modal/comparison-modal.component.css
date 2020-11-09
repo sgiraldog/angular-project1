@@ -81,56 +81,6 @@
   color: var(--white);
 }
 
-.information-container {
-  display: flex;
-  width: 80%;
-  text-align: center;
-  margin-top: 1rem;
-  justify-content: center;
-  padding-bottom: 0.5rem;
-}
-
-.information-container__item {
-  margin: 0;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.bordered {
-  border: solid 1px var(--gray-border);
-  border-top: none;
-  border-bottom: none;
-}
-
-.information-container__item-value,
-.information-container__item-name {
-  font-size: var(--pokemon-card-name-size);
-  color: var(--light-black);
-  font-weight: 500;
-  margin: 0.5rem;
-}
-
-.information-container__item-value {
-  color: var(--black);
-}
-
-.pokemon-container__title {
-  margin-top: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.pokemon-container__title-img {
-  width: 2rem;
-  height: 2rem;
-}
-
-.pokemon-container__title-text {
-  color: var(--gray);
-  margin: 0;
-}
-
 .comparison-image-container {
   width: 80%;
   display: flex;
@@ -141,30 +91,4 @@
 
 .comparison-pokemon-img {
   width: 10rem;
-}
-
-.abilities-container {
-  width: 100%;
-  margin-top: 1rem;
-  display: flex;
-}
-.abilities-list {
-  width: 50%;
-  margin: 0;
-  padding: 0;
-  justify-content: space-between;
-  list-style: none;
-  margin-bottom: 1rem;
-}
-
-.abilities-item {
-  padding: 0.2rem 3rem;
-}
-.right-oriented-list {
-  text-align: end;
-}
-
-.pokemon-text {
-  margin: 0;
-  color: var(--gray-bg);
 }

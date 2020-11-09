@@ -114,23 +114,6 @@
   color: var(--black);
 }
 
-.pokemon-container__title {
-  margin-top: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.pokemon-container__title-img {
-  width: 2rem;
-  height: 2rem;
-}
-
-.pokemon-container__title-text {
-  color: var(--gray);
-  margin: 0;
-}
-
 .abilities-list {
   width: 100%;
   margin: 0;
@@ -140,11 +123,6 @@
 
 .abilities-item {
   padding: 0.2rem 1rem;
-}
-
-.pokemon-text {
-  margin: 0;
-  color: var(--gray-bg);
 }
 
 .bug {
