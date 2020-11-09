@@ -4,6 +4,10 @@ import { Update } from '@ngrx/entity';
 
 export default class PokemonUtils {
   
+  static informationUnits = [ '', 'm', 'kg' ];
+  static informationClass = 'information-container__item';
+  static informationClasses = [ PokemonUtils.informationClass, PokemonUtils.informationClass + ' bordered', PokemonUtils.informationClass ];
+
   static buildPokemon(index: number, data: string, offset: string): PokemonItem {
     return {
       id: index + 1 + parseInt(offset),

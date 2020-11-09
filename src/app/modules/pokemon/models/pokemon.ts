@@ -30,9 +30,9 @@ export interface PokemonItem {
     weight: number;
     gender: string;
   },
-  abilities?: [Ability];
-  stats?: [Stat];
-  types?: [Type];
+  abilities?: Ability[];
+  stats?: Stat[];
+  types?: Type[];
 }
 
 

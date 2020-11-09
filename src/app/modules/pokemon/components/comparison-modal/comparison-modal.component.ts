@@ -1,3 +1,4 @@
+import  PokemonUtils  from 'src/app/utils/pokemon.utils';
 import { updateIsComparing } from './../../actions/pokemon.actions';
 import { selectPokemonById } from './../../selectors/pokemon.selectors';
 import { PokemonState } from './../../reducers/pokemon.reducer';
@@ -14,23 +15,19 @@ import { PokemonItem } from '../../models/pokemon';
   templateUrl: './comparison-modal.component.html',
   styleUrls: ['./comparison-modal.component.css']
 })
-export class ComparisonModalComponent implements OnInit {
+export class ComparisonModalComponent {
 
   firstPokemon$: Observable<PokemonItem>;
   secondPokemon$: Observable<PokemonItem>;
-  informationUnits = [ '', 'm', 'kg' ];
-  informationClass = 'information-container__item';
-  informationClasses = [ this.informationClass, this.informationClass + ' bordered', this.informationClass ];
-
+  informationUnits = PokemonUtils.informationUnits;
+  informationClasses = PokemonUtils.informationClasses;
+  
   constructor(public dialog: MatDialogRef<PokemonModalComponent>, @Inject(MAT_DIALOG_DATA) data: DialogData, private store: Store<PokemonState>) {
     this.firstPokemon$ = this.store.select(selectPokemonById, { id: data.firstPokemon})
     this.secondPokemon$ = this.store.select(selectPokemonById, { id: data.secondPokemon})
   }
 
-  ngOnInit(): void {
-  }
-
-  onCloseModal(): void{
+  onCloseModal(): void {
     this.store.dispatch(updateIsComparing());
     this.dialog.close();
   }

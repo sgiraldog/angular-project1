@@ -2,7 +2,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { EntityDataModule } from '@ngrx/data';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from './modules/shared/shared.module';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, metaReducers } from './reducers/index';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,7 +26,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
     MatIconModule,
     HttpClientModule,
     MatSnackBarModule,

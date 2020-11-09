@@ -7,12 +7,9 @@ import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
   templateUrl: './favorite-carousel.component.html',
   styleUrls: ['./favorite-carousel.component.css']
 })
-export class FavoriteCarouselComponent implements OnInit {
+export class FavoriteCarouselComponent {
   @Input() favoritesList: PokemonItem[]; 
 
   constructor() { }
 
-  ngOnInit(): void {
-    
-  }
 }

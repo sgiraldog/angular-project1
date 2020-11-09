@@ -1,3 +1,4 @@
+import  PokemonUtils  from 'src/app/utils/pokemon.utils';
 import { updateIsComparing } from './../../actions/pokemon.actions';
 import { Observable } from 'rxjs';
 import { selectPokemonById } from './../../selectors/pokemon.selectors';
@@ -13,20 +14,16 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './pokemon-modal.component.html',
   styleUrls: ['./pokemon-modal.component.css']
 })
-export class PokemonModalComponent implements OnInit {
+export class PokemonModalComponent {
 
   firstPokemon$: Observable<PokemonItem>;
   favoritePokemonList: PokemonItem[];
-  informationUnits = [ '', 'm', 'kg' ];
-  informationClass = 'information-container__item';
-  informationClasses = [ this.informationClass, this.informationClass + ' bordered', this.informationClass ];
+  informationUnits = PokemonUtils.informationUnits;
+  informationClasses = PokemonUtils.informationClasses;
 
   constructor(public dialog: MatDialogRef<PokemonModalComponent>, @Inject(MAT_DIALOG_DATA) data: DialogData, private store: Store<PokemonState>) {
     this.firstPokemon$ = this.store.select(selectPokemonById, { id: data.firstPokemon})
     this.favoritePokemonList = data.favoritePokemonsList;
-  }
-
-  ngOnInit(): void {
   }
 
   onCompare(): void{

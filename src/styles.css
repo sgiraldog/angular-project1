@@ -31,6 +31,15 @@
   --steel: #B8B8D0;
   --water: #6890F0;
   --unknown: #68A090;
+  --carousel-title-size: 1.4rem;
+  --welcome-message-size: 2.5rem;
+  --big-welcome-message-size: 3rem;
+  --sorry-title-size: 2.5rem;
+  --not-found-number-size: 10rem;
+  --page-not-found-size: 1.5rem;
+  --pokemon-card-name-size: 1rem;
+  --pokemon-item-name-size: 1.3rem;
+  --comparison-name-size: 1rem;
 }
 
 * {

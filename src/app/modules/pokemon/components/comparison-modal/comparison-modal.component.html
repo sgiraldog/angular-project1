@@ -1,55 +1,56 @@
-<div *ngIf='firstPokemon$ | async; let pokemon' class="comparison-container">
-  <div *ngIf='secondPokemon$ | async; let pokemon2' class='card'>
-    <div class='pokemon-card__title'>
-      <button class='pokemon-card__compare' hidden='true'>
+<div *ngIf="firstPokemon$ | async; let pokemon" class="comparison-container">
+  <div *ngIf="secondPokemon$ | async; let pokemon2" class="card">
+    <div class="pokemon-card__title">
+      <button class="pokemon-card__compare" hidden="true">
         Compare
       </button>
-      <button class='pokemon-card__close' (click)='onCloseModal()'>
+      <button class="pokemon-card__close" (click)="onCloseModal()">
         X
       </button>
     </div>
-    <div class='pokemon-container'>
-      <div class='comparison-image-container'>
-        <img class='comparison-pokemon-img' [src]='pokemon.imageUrl' [alt]='pokemon.name' />
-        <img class='comparison-pokemon-img' [src]='pokemon2.imageUrl' [alt]='pokemon2.name' />
+    <div class="pokemon-container">
+      <div class="comparison-image-container">
+        <img class="comparison-pokemon-img" [src]="pokemon.imageUrl" [alt]="pokemon.name" />
+        <img class="comparison-pokemon-img" [src]="pokemon2.imageUrl" [alt]="pokemon2.name" />
       </div>
-      <h2 class='pokemon-name'>{{ pokemon.name.toUpperCase() + ' vs ' + pokemon2.name.toUpperCase()}}</h2>
-      <div class='information-container'>
-        <div *ngFor='let item of pokemon.information | keyvalue; let i = index' [class]='informationClasses[i]'>
-          <h3 class='information-container__item-value'>{{ item.value + informationUnits[i] }}</h3>
-          <h3 class='information-container__item-name'>{{ item.key.charAt(0).toUpperCase() + item.key.slice(1) }}
+      <h2 class="pokemon-name">{{ pokemon.name.toUpperCase() + " vs " + pokemon2.name.toUpperCase()}}</h2>
+      <div class="information-container">
+        <div *ngFor="let item of pokemon.information | keyvalue; let i = index" [class]="informationClasses[i]">
+          <h3 class="information-container__item-value">{{ item.value + informationUnits[i] }}</h3>
+          <h3 class="information-container__item-name">{{ item.key.charAt(0).toUpperCase() + item.key.slice(1) }}
           </h3>
-          <h3 class='information-container__item-value'>{{ pokemon2.information[item.key] + informationUnits[i] }}
+          <h3 class="information-container__item-value">
+            {{ pokemon2.information[item.key] + informationUnits[i] }}
           </h3>
         </div>
       </div>
     </div>
-    <div class='pokemon-container'>
-      <div class='pokemon-container__title'>
-        <img class='pokemon-container__title-img' src='assets/images/gray-pokeball.png' alt='Pokeball' />
-        <h3 class='pokemon-container__title-text'>Abilities</h3>
+    <div class="pokemon-container">
+      <div class="pokemon-container__title">
+        <img class="pokemon-container__title-img" src="assets/images/gray-pokeball.png" alt="Pokeball" />
+        <h3 class="pokemon-container__title-text">Abilities</h3>
       </div>
-      <div class='abilities-container'>
-        <ul class='abilities-list'>
-          <li *ngFor='let item of pokemon.abilities' class='abilities-item'>
+      <div class="abilities-container">
+        <ul class="abilities-list">
+          <li *ngFor="let item of pokemon.abilities" class="abilities-item">
             {{ item.ability.name.charAt(0).toUpperCase() + item.ability.name.slice(1) }}
           </li>
         </ul>
-        <ul class='abilities-list'>
-          <li *ngFor='let item of pokemon2.abilities' class='abilities-item right'>
+        <ul class="abilities-list">
+          <li *ngFor="let item of pokemon2.abilities" class="abilities-item right-oriented-list">
             {{ item.ability.name.charAt(0).toUpperCase() + item.ability.name.slice(1) }}
           </li>
         </ul>
       </div>
     </div>
-    <div class='pokemon-container'>
-      <div class='pokemon-container__title'>
-        <img class='pokemon-container__title-img' src='assets/images/gray-pokeball.png' alt='Pokeball' />
-        <h3 class='pokemon-container__title-text'>Stats</h3>
+    <div class="pokemon-container">
+      <div class="pokemon-container__title">
+        <img class="pokemon-container__title-img" src="assets/images/gray-pokeball.png" alt="Pokeball" />
+        <h3 class="pokemon-container__title-text">Stats</h3>
       </div>
-      <app-pokemon-chart [firstPokemon]='firstPokemon$ | async' [secondPokemon]='secondPokemon$ | async'>
+      <app-pokemon-chart [firstPokemon]="firstPokemon$ | async" [secondPokemon]="secondPokemon$ | async">
       </app-pokemon-chart>
     </div>
-    <h2 class='pokemon-text'>{{ pokemon.name.toUpperCase() }}</h2>
+    <h2 class="pokemon-text">{{ pokemon.name.toUpperCase() }}</h2>
   </div>
 </div>

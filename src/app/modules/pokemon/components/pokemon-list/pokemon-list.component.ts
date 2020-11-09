@@ -15,37 +15,31 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.css']
 })
-export class PokemonListComponent implements OnInit {
+export class PokemonListComponent {
   @Input() favoritesList: PokemonItem[]; 
   @Input() isComparing: boolean;
   @Input() pokemonsList: PokemonItem[];
-  @Input()
+  @Input('searchContent')
   set searchContent (searchContent: string){
-    this._searchContent = searchContent;
-    this.filteredPokemonsList = this.pokemonsList.filter( item => item.name.includes(this._searchContent));
+    this.filteredPokemonsList = this.pokemonsList.filter( item => item.name.includes(searchContent));
   }
   
   firstPokemon: number;
   secondPokemon: number;
   filteredPokemonsList: PokemonItem[];
   offset = environment.POKEMON_LIST_OFFSET;
-  _searchContent: string;
 
   constructor(private pokemonsService: PokemonListEntityService, 
               private store: Store<PokemonState>,
               private dialog: MatDialog) { }
 
-  ngOnInit(): void {
-
-  }
-
-  onListScrolled(): void{
+  onListScrolled(): void {
     let params = { offset: this.offset.toString() , limit: environment.POKEMON_LIST_OFFSET.toString() };
     this.pokemonsService.getWithQuery(params);
     this.offset += environment.POKEMON_LIST_OFFSET;
   }
 
-  onPokemonClicked(pokemon: PokemonItem): void{
+  onPokemonClicked(pokemon: PokemonItem): void {
     this.pokemonsService.update(pokemon);
     
     if ( this.isComparing ) {

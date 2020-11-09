@@ -9,31 +9,25 @@ import { Label } from 'ng2-charts';
   templateUrl: './pokemon-chart.component.html',
   styleUrls: ['./pokemon-chart.component.css']
 })
-export class PokemonChartComponent implements OnInit {
+export class PokemonChartComponent {
 
-  @Input()
+  @Input('firstPokemon')
   set firstPokemon(firstPokemon: PokemonItem){
-    this._firstPokemon = firstPokemon;
     this.addPokemonToDataSet(firstPokemon);
   }
   
-  @Input()
+  @Input('secondPokemon')
   set secondPokemon(secondPokemon: PokemonItem){
-    this._secondPokemon = secondPokemon;
     this.addSecondPokemonToDataSet(secondPokemon);
   }
 
-  _firstPokemon: PokemonItem;
-  _secondPokemon: PokemonItem;
+ 
   chartType: ChartType = 'bar';
   chartOptions: ChartOptions = chartOptions;
   chartData: ChartDataSets[];
   chartLabels: Label[];
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   addPokemonToDataSet(pokemon: PokemonItem): void {
     this.chartLabels = pokemon.stats.map( item => item.stat.name);

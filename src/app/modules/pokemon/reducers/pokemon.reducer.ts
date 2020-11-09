@@ -1,3 +1,4 @@
+import { environment } from './../../../../environments/environment.prod';
 import { createReducer, on } from '@ngrx/store';
 import { PokemonItem } from '../models/pokemon';
 import { FavoriteActions, PokemonActions } from '../actions/action-types';
@@ -12,9 +13,9 @@ export interface PokemonState {
 }
 
 export const initialState: PokemonState = {
-  favoritePokemonList: [ { id: 1, name: 'Bulbasaur', imageUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/146c91287ad01f6e15315bbd733fd7442c91fe6d/sprites/pokemon/1.png'},
-                         { id: 4, name: 'Charmander', imageUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/146c91287ad01f6e15315bbd733fd7442c91fe6d/sprites/pokemon/4.png'},
-                         { id: 7, name: 'Squirtle', imageUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/146c91287ad01f6e15315bbd733fd7442c91fe6d/sprites/pokemon/7.png'} ],
+  favoritePokemonList: [ { id: 1, name: 'Bulbasaur', imageUrl: environment.SPRITES_URL + '1.png'},
+                         { id: 4, name: 'Charmander', imageUrl: environment.SPRITES_URL + '4.png'},
+                         { id: 7, name: 'Squirtle', imageUrl: environment.SPRITES_URL + '7.png'} ],
   isComparing: false,
   firstPokemon: undefined,
   secondPokemon: undefined,

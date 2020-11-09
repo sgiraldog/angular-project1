@@ -5,7 +5,6 @@ import { PokemonListEntityService } from './../pokemon/services/pokemon-list-ent
 import { FavoriteCarouselComponent } from './components/favorite-carousel/favorite-carousel.component';
 
 import { StoreModule } from '@ngrx/store';
-import { SharedModule } from '../../modules/shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -28,7 +27,6 @@ const entityMetaData: EntityMetadataMap = {
   imports: [
     CommonModule, 
     RouterModule.forChild(homePageRoutes),
-    SharedModule,
     StoreModule.forFeature('pokemonsState', favoritePokemonsReducer),
     NgbModule
   ],
