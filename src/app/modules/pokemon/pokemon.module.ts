@@ -1,3 +1,4 @@
+import { PokemonItem } from './models/pokemon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { PokemonListDataService } from './services/pokemon-list-data.service';
@@ -19,6 +20,7 @@ import { ChartsModule } from 'ng2-charts';
 import { PokemonInformationComponent } from './components/shared/pokemon-information/pokemon-information.component';
 import { ContainerTitleComponent } from './components/shared/container-title/container-title.component';
 import { PokemonAbilitiesComponent } from './components/shared/pokemon-abilities/pokemon-abilities.component';
+import { SearchBarComponent } from './components/shared/search-bar/search-bar.component';
 
 export const pokemonRoutes: Routes = [
   {
@@ -31,7 +33,9 @@ export const pokemonRoutes: Routes = [
 ]
 
 const entityMetaData: EntityMetadataMap = {
-  PokemonItem: {}
+  PokemonItem: {
+    filterFn: (pokemonItems: PokemonItem[], searchContent: string) => pokemonItems.filter((item) => item.name.includes(searchContent))
+  }
 };
 
 @NgModule({
@@ -44,7 +48,8 @@ const entityMetaData: EntityMetadataMap = {
     PokemonChartComponent,
     PokemonInformationComponent,
     ContainerTitleComponent,
-    PokemonAbilitiesComponent
+    PokemonAbilitiesComponent,
+    SearchBarComponent
   ],
   imports: [
     CommonModule,

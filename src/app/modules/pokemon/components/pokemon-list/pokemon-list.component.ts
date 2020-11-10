@@ -19,9 +19,10 @@ export class PokemonListComponent {
   @Input() favoritesList: PokemonItem[]; 
   @Input() isComparing: boolean;
   @Input() pokemonsList: PokemonItem[];
+  
   @Input('searchContent')
   set searchContent (searchContent: string){
-    this.filteredPokemonsList = this.pokemonsList.filter( item => item.name.includes(searchContent));
+    this.pokemonsService.setFilter(searchContent);
   }
   
   firstPokemon: number;

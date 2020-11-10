@@ -1,11 +1,3 @@
 .home-page-container{
   position: relative;
 }
-
-.search-input{
-  position: absolute;
-  border-radius: 0.5rem;
-  top: -4rem;
-  right: 1rem;
-  z-index: 10;
-}

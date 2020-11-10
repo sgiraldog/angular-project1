@@ -26,13 +26,9 @@ export class PokemonHomePageComponent implements OnInit {
   }
 
   loadPokemonData(): void {
-    this.pokemonsList$ = this.pokemonService.entities$
+    this.pokemonsList$ = this.pokemonService.filteredEntities$;
     this.favoritePokemonsList$ = this.store.select(getFavoritePokemonList);
     this.isComparing$ = this.store.select(getIsComparing);
     this.searchContent$ = this.store.select(getSearchContent);
-  }
-
-  updateSearchContent(value: string): void {
-    this.store.dispatch(updateSearchContent({searchContent: value}));
   }
 }

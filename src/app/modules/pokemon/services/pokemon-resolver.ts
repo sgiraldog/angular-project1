@@ -7,11 +7,9 @@ import { tap, filter, first } from 'rxjs/operators';
 @Injectable()
 export class PokemonResolver implements Resolve<boolean>{
   constructor(private pokemonsService: PokemonListEntityService){
-
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean>{
-
     return this.pokemonsService.loaded$
       .pipe(
         tap(loaded => {
