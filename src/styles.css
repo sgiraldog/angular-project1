@@ -1,0 +1,58 @@
+@import url(//db.onlinewebfonts.com/c/073a3b73a63a87e100f6bb8f003fc0d3?family=Flexo+Light);
+
+:root {
+  --shadow: #00000040;
+  --shadow-bg: #00000099;
+  --shadow-highligthed: #00000080;
+  --light-black: #313131;
+  --gray: #808080;
+  --light-gray: #EBEBEB;
+  --gray-bg: #dbdbdb;
+  --white: #FFFFFF;
+  --light-white: #FFFFFF70;
+  --redish: #BE2323;
+  --gray-border: #70707040;
+  --bug: #A8B820;
+  --dark: #705848;
+  --dragon: #7038F8;
+  --electric: #F8D030;
+  --fairy: #EE99AC;
+  --fighting: #C03028;
+  --fire: #F08030;
+  --flying: #A890F0;
+  --ghost: #705898;
+  --grass: #78C850;
+  --ground: #E0C068;
+  --ice: #98D8D8;
+  --normal: #A8A878;
+  --poison: #A040A0;
+  --psychic: #F85888;
+  --rock: #B8A038;
+  --steel: #B8B8D0;
+  --water: #6890F0;
+  --unknown: #68A090;
+  --carousel-title-size: 1.4rem;
+  --welcome-message-size: 2.5rem;
+  --big-welcome-message-size: 3rem;
+  --sorry-title-size: 2.5rem;
+  --not-found-number-size: 10rem;
+  --page-not-found-size: 1.5rem;
+  --pokemon-card-name-size: 1rem;
+  --pokemon-item-name-size: 1.3rem;
+  --comparison-name-size: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Flexo-Demi' , arial, sans-serif;
+}
+
+.custom-dialog-settings .mat-dialog-container {
+  padding: 0;
+  background: var(--gray-bg);
+  border-radius: 1rem;
+}

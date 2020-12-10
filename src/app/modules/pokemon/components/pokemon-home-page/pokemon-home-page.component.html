@@ -1,0 +1,6 @@
+<div class="home-page-container">
+  <app-search-bar></app-search-bar>
+  <app-pokemon-list [pokemonsList]="pokemonsList$ | async" [favoritesList]="favoritePokemonsList$ | async"
+    [isComparing]="isComparing$ | async" [searchContent]="searchContent$ | async">
+  </app-pokemon-list>
+</div>

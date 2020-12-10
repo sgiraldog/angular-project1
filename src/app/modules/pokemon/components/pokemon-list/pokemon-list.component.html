@@ -1,0 +1,12 @@
+<div class="list-container" infiniteScroll (scrolled)="onListScrolled()">
+  <ul class="pokemon__items">
+    <li class="pokemon__item" *ngFor="let pokemon of pokemonsList" (click)="onPokemonClicked(pokemon)">
+      <img class="pokemon__item-img" [src]="pokemon.imageUrl" [alt]="pokemon.name" />
+      <h3 class="pokemon__item-name">
+        {{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}
+      </h3>
+      <app-favorite-button [active]="true" [favoritesList]="favoritesList" [pokemon]="pokemon">
+      </app-favorite-button>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,47 @@
+.carousel{
+  height: 20rem;
+  width: 40vw;
+  overflow: hidden;
+}
+
+.carousel-slide{
+  height: 100%;
+  position: relative;
+}
+
+.picsum-img-wrapper{
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-img{
+  width: 15rem;
+  height: 15rem;
+  margin-bottom: 2rem;
+}
+
+.carousel-title{
+  color: var(--black);
+  position: absolute;
+  bottom: 2rem;
+  bottom: 0;
+  left: 50%;
+  text-transform: capitalize;
+  transform: translate(-50%, 0%);
+  font-weight: 700;
+  font-size: var(--carouse-title-size);
+}
+
+
+@media (max-width: 600px) {
+  .carousel{
+    width: 70vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .carousel{
+    width: 60vw;
+  }
+}

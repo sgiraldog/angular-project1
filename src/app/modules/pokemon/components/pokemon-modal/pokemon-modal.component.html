@@ -1,0 +1,36 @@
+<div *ngIf="firstPokemon$ | async; let pokemon" class="card">
+  <div class="pokemon-card__title">
+    <button class="pokemon-card__compare" (click)="onCompare()">
+      Compare
+    </button>
+    <app-favorite-button [active]="true" [favoritesList]="favoritePokemonList" [pokemon]="firstPokemon$ | async">
+    </app-favorite-button>
+    <button class="pokemon-card__close" (click)="onCloseModal()">
+      X
+    </button>
+  </div>
+  <div class="pokemon-container">
+    <div class="image-container">
+      <img class="pokemon-img" [src]="pokemon.imageUrl" [alt]="pokemon.name" />
+    </div>
+    <h2 class="pokemon-name">{{ pokemon.name.toUpperCase() }}</h2>
+
+    <p class="pokemon-description">
+      {{ pokemon.description }}
+    </p>
+    <ul class="pokemon-types">
+      <li *ngFor="let item of pokemon.types" class="pokemon-type" [class]="item.type.name">
+        {{ item.type.name.charAt(0).toUpperCase() + item.type.name.slice(1) }}
+      </li>
+    </ul>
+    <app-pokemon-information [pokemon]="pokemon"></app-pokemon-information>
+  </div>
+  <div class="pokemon-container">
+    <app-container-title [title]="containerTitles[0]"></app-container-title>
+    <app-pokemon-abilities [pokemon]="pokemon"></app-pokemon-abilities>
+  </div>
+  <div class="pokemon-container">
+    <app-container-title [title]="containerTitles[1]"></app-container-title>
+    <app-pokemon-chart [firstPokemon]="firstPokemon$ | async"></app-pokemon-chart>
+  </div>
+</div>

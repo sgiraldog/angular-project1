@@ -1,0 +1,9 @@
+<ngb-carousel class="carousel">
+  <ng-template *ngFor="let pokemon of favoritesList" class="carousel-slide" ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img class="carousel-img" [src]="pokemon.imageUrl" alt="Pokémon">
+    </div>
+    <h3 class="carousel-title">{{ pokemon.name }}</h3>
+  </ng-template>
+
+</ngb-carousel>
